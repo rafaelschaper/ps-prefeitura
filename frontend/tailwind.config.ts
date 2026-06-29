@@ -11,6 +11,12 @@ const config: Config = {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+        destructive: {
+          min: 'hsl(var(--destructive-min))',
+          DEFAULT: 'hsl(var(--destructive))',
+          max: 'hsl(var(--destructive-max))',
+          foreground: 'hsl(var(--destructive-foreground))',
+        },
       },
     },
   },

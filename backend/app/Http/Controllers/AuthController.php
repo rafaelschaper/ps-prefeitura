@@ -28,10 +28,9 @@ class AuthController extends Controller
 
         $token = $user->createToken('api-token')->plainTextToken;
 
-        return response()->json([
-            'user' => $user,
+        return response()->json(array_merge($user->toArray(), [
             'token' => $token,
-        ]);
+        ]));
     }
 
     public function logout(Request $request): JsonResponse
