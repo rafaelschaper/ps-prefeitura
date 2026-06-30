@@ -13,3 +13,8 @@
     --destructive-foreground: 5 80% 94%;
   }
 }
+
+.ck-custom-height .ck-editor__main > .ck-editor__editable {
+    height: 300px !important; /* Altura fixa desejada */
+    overflow-y: auto !important;
+}

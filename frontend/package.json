@@ -11,8 +11,10 @@
   "dependencies": {
     "@auth/core": "^0.34.3",
     "@auth/nextjs": "0.0.0-380f8d56",
+    "@ckeditor/ckeditor5-react": "^11.2.0",
     "autoprefixer": "^10.5.2",
     "axios": "^1.18.1",
+    "ckeditor5": "^48.2.0",
     "clsx": "^2.1.1",
     "next": "14.2.35",
     "next-auth": "5.0.0-beta.31",

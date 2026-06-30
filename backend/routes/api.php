@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\CKEditorController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -18,6 +19,12 @@ Route::middleware(['auth:sanctum'])->group(function () {
 
     Route::post('/logout', [AuthController::class, 'logout']);
 });
+
+Route::prefix('api')
+    ->middleware('api')
+    ->group(function () {
+        Route::post('/ckeditor/upload', [CKEditorController::class, 'upload']);
+    });
 
 Route::apiResource('/posts', PostController::class)->only(['index', 'show']);
 
