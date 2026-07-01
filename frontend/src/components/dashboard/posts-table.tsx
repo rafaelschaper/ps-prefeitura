@@ -18,7 +18,7 @@ export function DashboardPostsTable({
   posts,
 }: DashboardPostsTableProps) {
   return (
-    <div className="overflow-hidden rounded-md border border-zinc-200 bg-white">
+    <div className="overflow-y-hidden rounded-md border border-zinc-200 bg-white">
       <table className="w-full min-w-[720px] border-collapse text-left text-sm">
         <thead className="bg-zinc-50 text-xs font-semibold uppercase text-zinc-500">
           <tr>

@@ -32,13 +32,13 @@ export default async function AdminPage() {
 
         <section className="mx-auto grid max-w-5xl gap-4 px-6 py-6 sm:grid-cols-3">
           <article className="rounded-md border border-zinc-200 bg-white p-4">
-            <p className="text-sm font-medium text-zinc-500">Usuario</p>
+            <p className="text-sm font-medium text-zinc-500">Usuário</p>
             <p className="mt-2 text-lg font-semibold">{session?.user?.name}</p>
             <p className="mt-1 text-sm text-zinc-500">{session?.user?.email}</p>
           </article>
 
           <article className="rounded-md border border-zinc-200 bg-white p-4">
-            <p className="text-sm font-medium text-zinc-500">Permissoes</p>
+            <p className="text-sm font-medium text-zinc-500">Permissões</p>
             <p className="mt-2 text-lg font-semibold">
               {session?.user?.permissions?.join(', ') || '-'}
             </p>

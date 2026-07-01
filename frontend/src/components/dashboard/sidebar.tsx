@@ -1,8 +1,6 @@
 import Link from 'next/link'
 import type { IconType } from 'react-icons'
 
-import { cn } from '@/lib/utils'
-
 export type DashboardSidebarItem = {
   Icon?: IconType
   label: string
@@ -13,10 +11,12 @@ export type DashboardSidebarItem = {
 
 type DashboardSidebarNavItemProps = {
   item: DashboardSidebarItem
+  onNavigate?: () => void
 }
 
 export function DashboardSidebarNavItem({
   item,
+  onNavigate,
 }: DashboardSidebarNavItemProps) {
   const Icon = item.Icon
 
@@ -28,7 +28,11 @@ export function DashboardSidebarNavItem({
   )
 
   return (
-    <Link className='flex max-w-full items-center gap-3 rounded-xl bg-emerald-500 p-3 font-medium transition hover:text-lime-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/80' href={item.href}>
+    <Link
+      className="flex max-w-full items-center gap-3 rounded-xl bg-emerald-500 p-3 font-medium transition hover:text-lime-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/80"
+      href={item.href}
+      onClick={onNavigate}
+    >
       {content}
     </Link>
   )

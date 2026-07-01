@@ -51,7 +51,7 @@ export function PostCreateScreen() {
       )}
 
       <div className="mb-6 flex justify-end">
-        <Button onClick={() => setIsOpen(true)}>Criar postagem</Button>
+        <Button className='w-full md:w-fit' onClick={() => setIsOpen(true)}>Criar postagem</Button>
       </div>
 
       {isOpen && (

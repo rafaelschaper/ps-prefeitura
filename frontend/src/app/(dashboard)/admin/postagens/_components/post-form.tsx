@@ -100,7 +100,7 @@ export default function PostForm({
           type="file"
         />
         {(updateImage || post?.image) && (
-          <p className="text-xs text-zinc-500">{updateImage || post?.image}</p>
+          <p className="overflow-hidden text-xs text-zinc-500">{updateImage || post?.image}</p>
         )}
         <FieldError message={error?.errors?.image} />
       </div>
