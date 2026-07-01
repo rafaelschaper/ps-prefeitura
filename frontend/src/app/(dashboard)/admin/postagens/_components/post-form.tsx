@@ -51,7 +51,7 @@ export default function PostForm({
       {post?.id && <input name="id" type="hidden" value={post.id} />}
 
       <div className="space-y-2">
-        <Label className="sr-only" htmlFor="title">
+        <Label htmlFor="title">
           Titulo
         </Label>
         <Input
@@ -68,7 +68,7 @@ export default function PostForm({
       </div>
 
       <div className="space-y-2">
-        <Label className="sr-only" htmlFor="description">
+        <Label htmlFor="description">
           Descricao
         </Label>
         <Input
@@ -85,7 +85,7 @@ export default function PostForm({
       </div>
 
       <div className="space-y-2">
-        <Label className="sr-only" htmlFor="image">
+        <Label htmlFor="image">
           Imagem
         </Label>
         <Input
@@ -106,7 +106,7 @@ export default function PostForm({
       </div>
 
       <div className="space-y-2">
-        <Label className="sr-only" htmlFor="text">
+        <Label htmlFor="text">
           Texto
         </Label>
 

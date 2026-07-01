@@ -14,7 +14,104 @@
   }
 }
 
+@layer components {
+    .blog-content .table {
+        @apply w-full block my-6;
+        border: none !important;
+        background: transparent !important;
+    }
+    .blog-content tbody {
+        @apply w-full block;
+    }
+    .blog-content tr {
+        @apply flex w-full justify-between gap-4 mb-4;
+    }
+    .blog-content td {
+        @apply block p-0 border-none;
+        flex: 1;
+        min-width: 0;
+    }
+    .blog-content td figure,
+    .blog-content td img {
+        @apply w-full h-full object-cover rounded block m-0;
+    }
+}
+
+.image-style-side, 
+.image-style-align-left {
+    float: left;
+    margin-right: 1.5rem;
+    max-width: 50%;
+}
+
+.image-style-align-right {
+    float: right;
+    margin-left: 1.5rem;
+    max-width: 50%;
+}
+
+.image-style-align-center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.prose::after, .ck-content::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.ck-content .image-style-align-left,
+.ck-content .image-style-side {
+    float: left;
+    margin-right: 20px;
+}
+
+.ck-content .image-style-align-right {
+    float: right;
+    margin-left: 20px;
+}
+
+.ck-content .image-style-align-center {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+.ck-content figure.image {
+    display: table;
+    clear: both;
+    margin: 1rem auto;
+    max-width: 100%;
+}
+
+.ck-content figure.image img {
+    display: block;
+    height: auto;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.blog-content .ck-content .image.image-style-align-left,
+.blog-content .ck-content .image.image-style-side {
+    margin: 0.25rem 2rem 1rem 0;
+}
+
+.blog-content .ck-content .image.image-style-align-right {
+    margin: 0.25rem 0 1rem 2rem;
+}
+
+.ck-content::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
 .ck-custom-height .ck-editor__main > .ck-editor__editable {
     height: 300px !important; /* Altura fixa desejada */
     overflow-y: auto !important;
+}
+.custom-scrollbar::-webkit-scrollbar {
+  width: 5px;
 }

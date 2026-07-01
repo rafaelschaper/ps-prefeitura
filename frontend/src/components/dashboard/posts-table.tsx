@@ -2,6 +2,7 @@
 
 import { Button } from '@/components/button'
 import type { postType } from '@/types/post'
+import { LuInfo, LuFilePen, LuTrash2 } from 'react-icons/lu'
 
 type DashboardPostsTableProps = {
   onDeletePost?: (post: postType) => void
@@ -37,24 +38,24 @@ export function DashboardPostsTable({
                 <div className="flex justify-end gap-2">
                   <Button
                     aria-label={`Visualizar postagem ${post.title}`}
-                    className="h-9 w-9 border bg-green-400 p-0 text-white hover:bg-green-500"
+                    className="size-9 border bg-green-400 p-0 text-lg text-white hover:bg-green-500"
                     onClick={() => onViewPost?.(post)}
                   >
-                    V
+                    <LuInfo />
                   </Button>
                   <Button
                     aria-label={`Editar postagem ${post.title}`}
-                    className="h-9 w-9 border bg-blue-400 p-0 text-white hover:bg-blue-500"
+                    className="size-9 border bg-blue-400 p-0 text-lg text-white hover:bg-blue-500"
                     onClick={() => onEditPost?.(post)}
                   >
-                    E
+                    <LuFilePen />
                   </Button>
                   <Button
                     aria-label={`Deletar postagem ${post.title}`}
-                    className="h-9 w-9 border bg-red-400 p-0 text-white hover:bg-red-500"
+                    className="size-9 border bg-red-400 p-0 text-lg text-white hover:bg-red-500"
                     onClick={() => onDeletePost?.(post)}
                   >
-                    D
+                    <LuTrash2 />
                   </Button>
                 </div>
               </td>

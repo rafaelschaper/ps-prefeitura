@@ -2,6 +2,10 @@ import {
   DashboardSidebarNavItem,
   type DashboardSidebarItem,
 } from '@/components/dashboard/sidebar'
+import { LuHouse, LuNewspaper } from 'react-icons/lu'
+import Image from 'next/image'
+
+import navLogo from '@/assets/img/nav-logo.png'
 
 type SidebarProps = {
   userName?: string | null
@@ -9,33 +13,27 @@ type SidebarProps = {
 
 const navItems: DashboardSidebarItem[] = [
   {
-    label: 'Usuarios',
-    href: '#',
-    isDisabled: true,
+    Icon: LuHouse,
+    label: 'Home',
+    href: '/admin',
   },
   {
-    label: 'Calendario',
-    href: '#',
-    isDisabled: true,
-  },
-  {
-    label: 'Post',
+    Icon: LuNewspaper,
+    label: 'Postagens',
     href: '/admin/postagens',
-    isActive: true,
-  },
-  {
-    label: 'Documentos',
-    href: '#',
-    isDisabled: true,
   },
 ]
 
 export function Sidebar({ userName }: SidebarProps) {
   return (
-    <aside className="flex min-h-screen w-full flex-col bg-emerald-600 px-8 py-24 text-white sm:w-[216px] sm:px-7">
+    <aside className="flex min-h-screen w-full flex-col bg-emerald-600 px-8 py-24 text-white sm:px-7">
       <div className="mb-10 flex flex-col items-center text-center">
-        <p className="mt-5 w-full text-left text-xl text-emerald-100">
-          <span className="font-bold text-lime-300">Ola, </span>
+        <Image 
+          src={navLogo} 
+          alt="Logo" 
+          className="size-40" />
+        <p className="mt-5 w-full text-left text-2xl text-emerald-100">
+          <span className="font-bold text-lime-300">Olá, </span>
           <span className="font-light italic">{userName || 'Admin'}</span>
         </p>
       </div>

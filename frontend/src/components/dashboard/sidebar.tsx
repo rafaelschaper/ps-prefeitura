@@ -1,8 +1,10 @@
 import Link from 'next/link'
+import type { IconType } from 'react-icons'
 
 import { cn } from '@/lib/utils'
 
 export type DashboardSidebarItem = {
+  Icon?: IconType
   label: string
   href: string
   isActive?: boolean
@@ -16,25 +18,18 @@ type DashboardSidebarNavItemProps = {
 export function DashboardSidebarNavItem({
   item,
 }: DashboardSidebarNavItemProps) {
-  const className = cn(
-    'flex items-center gap-3 text-sm font-medium transition',
-    item.isActive ? 'font-bold text-white' : 'text-emerald-50',
-    item.isDisabled
-      ? 'cursor-not-allowed opacity-75'
-      : 'hover:text-lime-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/80',
+  const Icon = item.Icon
+
+  const content = (
+    <>
+      {Icon ? <Icon aria-hidden="true" className="h-5 w-5 shrink-0" /> : null}
+      <span>{item.label}</span>
+    </>
   )
 
-  if (item.isDisabled) {
-    return (
-      <span aria-disabled="true" className={className}>
-        {item.label}
-      </span>
-    )
-  }
-
   return (
-    <Link className={className} href={item.href}>
-      {item.label}
+    <Link className='flex max-w-full items-center gap-3 rounded-xl bg-emerald-500 p-3 font-medium transition hover:text-lime-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/80' href={item.href}>
+      {content}
     </Link>
   )
 }

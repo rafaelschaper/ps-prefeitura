@@ -73,7 +73,6 @@ const CustomEditor = ({ value, onChange, disabled }: CustomEditorProps) => {
         shouldNotGroupWhenFull: true,
         image: {
             toolbar: [
-                'imageStyle:inline', 
                 'imageStyle:wrapText', 
                 'imageStyle:block',
                 '|',

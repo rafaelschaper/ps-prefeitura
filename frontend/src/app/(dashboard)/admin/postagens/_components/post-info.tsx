@@ -11,7 +11,7 @@ type PostInfoProps = {
 
 export function PostInfo({ onClose, post }: PostInfoProps) {
   return (
-    <section className="absolute inset-0 z-20 bg-zinc-100 px-6 py-8 text-zinc-950">
+    <section className="absolute inset-x-0 top-0 z-20 min-h-full bg-zinc-100 px-6 py-8 text-zinc-950">
       <div className="mx-auto max-w-5xl">
         <div className="mb-6">
           <h1 className="text-2xl font-semibold tracking-normal">Postagens</h1>
